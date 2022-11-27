@@ -1,0 +1,40 @@
+.container {
+    background-color: #191919;
+    padding: 0 352px;
+    padding-top: 64px;
+}
+
+.statistics {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 24px;
+    border-bottom: 2px solid #333333;
+}
+
+.statistics__all,
+.statistics__completed {
+    display: flex;
+    align-items: center;
+}
+
+.statistics__title__all,
+.statistics__title__completed {
+    margin-right: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #4EA8DE;
+}
+
+.statistics__title__completed {
+    color: #8284FA;
+}
+
+
+.statistics__number {
+    display: inline;
+    background-color: #333333;
+    padding: 2px 8px;
+    border-radius: 999px;
+}
+
+

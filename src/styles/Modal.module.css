@@ -1,0 +1,131 @@
+.outer_container {
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    
+}
+
+.inner_container {
+    width: 80%;
+    height: 100%;
+    border-radius: 20px;
+    color: black;
+    background-color: #191919;
+    text-align: center;
+    color: inherit;
+    padding: 0 40px;
+    padding-bottom: 450px;
+}
+
+
+.close_button {
+    display: block;
+    position: relative;
+    top: 5%;
+    left: 93.5%;
+    padding: 8px 10px;
+    margin-bottom: 100px;
+}
+
+.title,
+.description,
+.deadline,
+.files {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.fields {
+    margin-top: 80px;
+}
+
+.title_change {
+    width: 50%;
+    height: 35px;
+    font-size: 14px;
+    border-radius: 8px;
+    padding: 16px;
+    background-color: #262626;
+    border: 1px solid #0D0D0D;
+    color: #808080;
+}
+
+.title_change:focus {
+    outline: none;
+}
+
+.description__text {
+    font-size: 14px;
+    width: 35%;
+    height: 100px;
+    word-break: break-all;
+    text-align: left;
+}
+
+.description__change {
+    resize: none;
+    width: 50%;
+    height: 100px;
+    font-size: 12px;
+    border-radius: 8px;
+    padding: 16px;
+    background-color: #262626;
+    border: 1px solid #0D0D0D;
+    color: #808080;
+}
+
+.description__change,
+.description__change::placeholder {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+}
+
+.description__change:focus {
+    outline: none;
+}
+
+select {
+    background-color: #808080;
+    margin-right: 5px;
+    width: 60px;
+    text-align: center;
+    font-family: inherit;
+    font-weight: bold;
+    background-color: #262626;
+    color: #808080;
+    border: 1px solid #0D0D0D;
+    border-radius: 8px;
+}
+
+.accept_button {
+    padding: 5px 9px;
+}
+
+.file__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input_image {
+    display: flex;
+    align-items: center;
+}
+
+.file__button {
+    margin-left: 100px;
+    padding: 10px 5px;
+}
+
+.input_image {
+    background-color: #262626;
+    color: black;
+    border: none;
+    padding: 0;
+}

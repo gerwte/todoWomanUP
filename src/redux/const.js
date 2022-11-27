@@ -1,0 +1,7 @@
+export const ADD_TODO = 'ADD_TODO'
+export const REMOVE_TODO = 'REMOVE_TODO'
+export const TOGGLE_TODO = 'TOGGLE_TODO'
+export const CHANGE_TITLE = 'CHANGE_TITLE'
+export const CHANGE_DESCRIPTION = 'CHANGE_DESCRIPTION'
+export const CHANGE_DEADLINE = 'CHANGE_DEADLINE'
+export const ADD_FILE = 'ADD_FILE'

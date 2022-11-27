@@ -1,0 +1,36 @@
+.container {
+    padding: 0 352px;
+    padding-top: 72px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: #0D0D0D;
+    position: relative;
+    height: 200px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 53px;
+}
+
+.name {
+    font-weight: 900;
+    text-transform: lowercase;
+    margin-left: 12px;
+}
+
+.first_second_letter {
+    color: #4EA8DE;
+}
+
+.third_fourth_letter {
+    color: #5E60CE;
+}
+
+.input_button {
+    display: flex;
+    justify-content: center;
+}
+

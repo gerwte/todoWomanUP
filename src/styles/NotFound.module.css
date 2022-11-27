@@ -1,0 +1,25 @@
+.container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding-top: 64px;
+}
+
+
+.image {
+    margin: 0 auto;
+    background-image: url(../assets/img/Clipboard.svg);
+    width: 56px;
+    height: 56px;
+    margin-bottom: 16px;
+}
+
+.title {
+    font-weight: bold;
+    color: #808080;
+    margin-bottom: 10px;
+}
+
+.text {
+    color: #808080;
+}

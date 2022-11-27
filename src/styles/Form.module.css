@@ -1,0 +1,41 @@
+.input {
+    width: 100%;
+    height: 54px;
+    border-radius: 8px;
+    padding: 16px;
+    background-color: #262626;
+    border: 1px solid #0D0D0D;
+    color: #808080;
+    margin-right: 8px;
+}
+
+.input:focus {
+    outline: none;
+}
+
+.input:placeholder {
+    font-family: inherit;
+}
+
+.button {
+    display: inline;
+    width: 150px;
+    height: 52px;
+    border-radius: 8px;
+    background-color: #1E6F9F;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #F2F2F2;
+    font-weight: 700;
+    font-family: inherit;
+    border: none;
+}
+
+.button__plus {
+    background: url('../assets/img/plus.svg');
+    background-size: cover;
+    width: 16px;
+    height: 16px;
+    margin-left: 10px;
+}
