@@ -1,5 +1,10 @@
 import { ADD_TODO, CHANGE_TITLE, REMOVE_TODO, TOGGLE_TODO, CHANGE_DEADLINE, CHANGE_DESCRIPTION, ADD_FILE } from "./const"
-
+/**
+ * Редюсер
+ * @param {Array} state Дефолтный стейт 
+ * @param {Object} action Экшн  
+ * @returns {Array} Возвращает обновленный массив с задачами
+ */
 export const todos = (state = [], action) => {
     switch(action.type) {
         case ADD_TODO: {

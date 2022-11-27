@@ -4,14 +4,35 @@ import { useDispatch } from 'react-redux'
 import { addTodo } from '../redux/actions'
 import { useRef } from 'react'
 
+/**
+ * Инпут и кнопка добавления задачи 
+ */
 function Form() {
-  const refInput = useRef(null)
-  const [value, setValue] = useState(null)
   const dispatch = useDispatch()
+  /** 
+   * Создание ссылки на значение инпута
+   */
+  const refInput = useRef(null)
+  /**
+   * Состояние значения инпута
+   */
+  const [value, setValue] = useState(null)
+  /**
+   * Значение ссылки
+   */
   let targetValue = refInput.current
+  /**
+   * @function 
+   * @param {Object} e Событие
+   */
   const changeInput = (e) => {
     setValue(e.target.value)
   }
+  /**
+   * Событие клика по кнопке: добавление новой задачи и очищение инпута
+   * @type {Function}
+   * @event Click
+   */
   const clickFunction = () => {
     dispatch(addTodo(value))
     setValue(null)

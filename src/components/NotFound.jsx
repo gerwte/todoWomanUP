@@ -1,6 +1,9 @@
 import React from 'react'
 import style from '../styles/NotFound.module.css'
 
+/**
+ * Компонент, который отображается в случае, когда задачи не найдены
+ */
 function NotFound() {
     return (
         <div className={style.container}>

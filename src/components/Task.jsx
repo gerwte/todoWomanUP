@@ -5,16 +5,31 @@ import { removeTodo } from '../redux/actions';
 import { toggleTodo } from '../redux/actions';
 import Modal from './Modal';
 
+
+/**
+ * Компонент задачи
+ */
 function Task({ task }) {
 
-    // Нужно сравнить две даты, на основе истинности сравнения изменить состояние и сделать отрисовку по условию
     const dispatch = useDispatch()
     const [opened, setOpened] = useState(false)
+    /**
+     * Объект, содержащий в себе число, месяц и дату завершения
+     */
     const deadline = task.deadline
     const [outOfTime, setOutOfTime] = useState(false)
+    /**
+     * Дата завершения в формате Date для дальнейшего сравнения
+     */
     const deadlineDate = new Date(deadline.year, deadline.month, deadline.day, deadline.hour, deadline.minute)
+    /**
+     * Нынешняя дата
+     */
     const nowDate = new Date()
     
+    /**
+     * Сравнивание установленной и нынешней датой завершения и дальнейшее изменение состояния завершенности
+     */
     useEffect(() => {
         nowDate > deadlineDate && setOutOfTime(true)
         deadline.hour === null && setOutOfTime(false)

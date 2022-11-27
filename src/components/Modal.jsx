@@ -5,40 +5,95 @@ import { changeTitle, changeDescription, changeDeadline } from '../redux/actions
 import dayjs from 'dayjs'
 import { addFiles } from '../redux/actions'
 
-
+/**
+ * Компонент модалки
+ * @param {Object} task Объект с задачей 
+ * @param {Object} setOpened Изменение состояние открытой модалки
+ * @returns 
+ */
 function Modal({ task, setOpened }) {
   const dayObj = dayjs()
   const dispatch = useDispatch()
 
-  //----------------- Дефолтные состояния -----------------//
+ /**
+  * Состояние и изменение установленного в select дня завершения задачи
+  */
   const [day, setDay] = useState(dayObj.$D)
+  /**
+  * Состояние и изменение установленного в select месяца завершения задачи
+  */
   const [month, setMonth] = useState(dayObj.$M + 1)
+  /**
+  * Состояние и изменение установленного в select года завершения задачи
+  */
   const [year, setYear] = useState(dayObj.$y)
+  /**
+  * Состояние и изменение установленного в select часа завершения задачи
+  */
   const [hour, setHours] = useState(null)
+  /**
+  * Состояние и изменение установленной в select минуты завершения задачи
+  */
   const [minute, setMinutes] = useState(null)
+  /**
+   * Состояние и изменение состояния заголовка
+  */
   const [newTitle, setNewTitle] = useState(task.title)
+  /**
+   * Состояние и изменение состояния описания задачи
+   */
   const [newDescription, setNewDescription] = useState(task.description)
+  /**
+   * Состояние и изменение состояния прикрепленного к задаче изображения
+   */
   const [image, setImage] = useState(null)
+  /**
+   * Состояние и изменение состояния прикрепленной к задаче ссылки изображения
+   */
   const [imageURL, setImageURL] = useState(null)
-
+  /**
+   * Сегодняшний год
+   */
   const currentYear = dayjs().year()
+  /**
+   * Количество дней в месяце
+   */
   const daysInMonth = dayjs(`${year}-${month}`).daysInMonth()
 
-  //----------------- Создание массивов, в которые будут помещаться дни в месяце, месяцы и годы -----------//
+  /**
+   * Создание массива с днями в текущем месяце
+   */
   const daysArray = Array.from(Array(daysInMonth))
+  /**
+   * Создание массива с количеством месяцев в году
+   */
   const monthsArray = Array.from(Array(12))
+  /**
+   * Создание массива с количеством часов в сутках
+   */
   const hoursArray = Array.from(Array(24))
+  /**
+   * Создание массива с количеством минут в секундах
+   */
   const minutesArray = Array.from(Array(60))
+  /**
+   * Создание массива с годами
+   */
   const yearsArray = [currentYear, dayjs().year() + 1, dayjs().year() + 2, dayjs().year() + 3, dayjs().year() + 4]
 
-  //------------------- Функция, которая вызывается по клику на кнопку "Применить" ---------------------//
+  /**
+   * Изменение заголовка и/или описания при нажатии на кнопку "Применить"
+   */
   const acceptChanges = () => {
     dispatch(changeTitle(task.id, newTitle))
     dispatch(changeDescription(task.id, newDescription))
     setOpened(false)
   };
 
-  //--------------------- Отправка файлов --------------------------------------//
+  /**
+   * Загрузка изображения
+   * @param {Object} e Событие загрузки файлов
+   */
   const setFile = (e) => {
     let fileReader = new FileReader();
     fileReader.onloadend = () => {
@@ -47,7 +102,6 @@ function Modal({ task, setOpened }) {
     const file = e.target.files[0];
     setImage(file)
     fileReader.readAsDataURL(file)
-    console.log(imageURL)
   };
 
 

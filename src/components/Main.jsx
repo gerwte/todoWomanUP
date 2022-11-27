@@ -5,7 +5,14 @@ import style from '../styles/Main.module.css'
 import { useSelector } from 'react-redux'
 
 function Main() {
+  /**
+   * Объект с задачами
+   * @type {Object}
+   */
     const tasks = useSelector((state => state.todos.reverse()))
+  /**
+   * Завершенные задачи
+   */
     const completedTasks = tasks.filter(task => task.completed === true)
   return (
     <div className={style.container}>
